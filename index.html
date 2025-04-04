@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FameFinder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">FameFinder 🔍</h1>
+
+    <!-- Search Box -->
+    <div class="mb-4">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a famous person or businessman..."
+        class="w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+
+    <!-- Results Section -->
+    <div id="results" class="space-y-4">
+      <!-- Dynamic results will appear here -->
+    </div>
+  </div>
+
+  <script>
+    // Sample data (you can replace this with real database/API in the future)
+    const people = [
+      {
+        name: "Elon Musk",
+        netWorth: "$250 Billion",
+        company: "Tesla, SpaceX",
+        bio: "CEO of Tesla and founder of SpaceX. Known for innovation and entrepreneurship.",
+      },
+      {
+        name: "Jeff Bezos",
+        netWorth: "$150 Billion",
+        company: "Amazon",
+        bio: "Founder of Amazon and space company Blue Origin.",
+      },
+      {
+        name: "Ankur Warikoo",
+        netWorth: "$1 Million+",
+        company: "Warikoo Education",
+        bio: "Entrepreneur, educator, and motivational speaker.",
+      },
+      {
+        name: "Peyush Bansal",
+        netWorth: "$1 Billion+",
+        company: "Lenskart",
+        bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
+      }
+    ];
+
+    const searchInput = document.getElementById("searchInput");
+    const resultsDiv = document.getElementById("results");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      resultsDiv.innerHTML = "";
+
+      const filtered = people.filter((person) =>
+        person.name.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = "<p class='text-gray-500'>No results found.</p>";
+      } else {
+        filtered.forEach((person) => {
+          const card = document.createElement("div");
+          card.className = "bg-blue-50 p-4 rounded-xl shadow-sm";
+          card.innerHTML = `
+            <h2 class="text-xl font-semibold">${person.name}</h2>
+            <p><strong>Net Worth:</strong> ${person.netWorth}</p>
+            <p><strong>Company:</strong> ${person.company}</p>
+            <p class="mt-2 text-sm text-gray-700">${person.bio}</p>
+          `;
+          resultsDiv.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
