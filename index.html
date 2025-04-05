@@ -29,50 +29,305 @@
 
   <script>
     // Sample data (you can replace this with real database/API in the future)
-    const people = [
-      {
-        name: "Elon Musk",
-        netWorth: "$250 Billion",
-        company: "Tesla, SpaceX",
-        bio: "CEO of Tesla and founder of SpaceX. Known for innovation and entrepreneurship.",
-      },
-      {
-        name: "Jeff Bezos",
-        netWorth: "$150 Billion",
-        company: "Amazon",
-        bio: "Founder of Amazon and space company Blue Origin.",
-      },
-      {
-        name: "Ankur Warikoo",
-        netWorth: "$1 Million+",
-        company: "Warikoo Education",
-        bio: "Entrepreneur, educator, and motivational speaker.",
-      },
-      {
-        name: "Peyush Bansal",
-        netWorth: "$1 Billion+",
-        company: "Lenskart",
-        bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
-      },
-      {
-        name: "Heshaam Bansal",
-        netWorth: "$10 Billion+",
-        company: "Lenskart",
-        bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
-      },
-      {
-        name: "Adityannath Uncle",
-        netWorth: "$1 Billion+",
-        company: "Lenskart",
-        bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
-      },
-      {
-        name: "Adityannath Kaka",
-        netWorth: "$1 Billion+",
-        company: "Lenskart",
-        bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
-      }
-    ];
+    <!-- Replace just the `people` array section with the following -->
+  // Sample data (you can replace this with real database/API in the future)
+  const people = [
+    {
+      name: "Elon Musk",
+      netWorth: "$250 Billion",
+      company: "Tesla, SpaceX",
+      bio: "CEO of Tesla and founder of SpaceX. Known for innovation and entrepreneurship.",
+    },
+    {
+      name: "Jeff Bezos",
+      netWorth: "$150 Billion",
+      company: "Amazon",
+      bio: "Founder of Amazon and space company Blue Origin.",
+    },
+    {
+      name: "Ankur Warikoo",
+      netWorth: "$1 Million+",
+      company: "Warikoo Education",
+      bio: "Entrepreneur, educator, and motivational speaker.",
+    },
+    {
+      name: "Peyush Bansal",
+      netWorth: "$1 Billion+",
+      company: "Lenskart",
+      bio: "Founder and CEO of Lenskart, a leading eyewear brand in India.",
+    },
+    {
+      name: "Warren Buffett",
+      netWorth: "$120 Billion",
+      company: "Berkshire Hathaway",
+      bio: "One of the most successful investors of all time.",
+    },
+    {
+      name: "Bill Gates",
+      netWorth: "$110 Billion",
+      company: "Microsoft",
+      bio: "Co-founder of Microsoft and philanthropist.",
+    },
+    {
+      name: "Mark Zuckerberg",
+      netWorth: "$100 Billion",
+      company: "Meta",
+      bio: "Founder and CEO of Meta Platforms (formerly Facebook).",
+    },
+    {
+      name: "Larry Page",
+      netWorth: "$105 Billion",
+      company: "Google",
+      bio: "Co-founder of Google and Alphabet.",
+    },
+    {
+      name: "Sergey Brin",
+      netWorth: "$100 Billion",
+      company: "Google",
+      bio: "Co-founder of Google and tech visionary.",
+    },
+    {
+      name: "Steve Ballmer",
+      netWorth: "$90 Billion",
+      company: "Microsoft",
+      bio: "Former CEO of Microsoft and current owner of LA Clippers.",
+    },
+    {
+      name: "Mukesh Ambani",
+      netWorth: "$85 Billion",
+      company: "Reliance Industries",
+      bio: "Chairman and largest shareholder of Reliance Industries.",
+    },
+    {
+      name: "Gautam Adani",
+      netWorth: "$70 Billion",
+      company: "Adani Group",
+      bio: "Indian billionaire industrialist and founder of the Adani Group.",
+    },
+    {
+      name: "Bernard Arnault",
+      netWorth: "$200 Billion",
+      company: "LVMH",
+      bio: "Chairman and CEO of LVMH, world leader in luxury goods.",
+    },
+    {
+      name: "Oprah Winfrey",
+      netWorth: "$2.5 Billion",
+      company: "Harpo Productions",
+      bio: "Media mogul, actress, and philanthropist.",
+    },
+    {
+      name: "Jack Ma",
+      netWorth: "$30 Billion",
+      company: "Alibaba",
+      bio: "Co-founder of Alibaba Group and investor.",
+    },
+    {
+      name: "Larry Ellison",
+      netWorth: "$130 Billion",
+      company: "Oracle",
+      bio: "Co-founder of Oracle Corporation and tech entrepreneur.",
+    },
+    {
+      name: "Tim Cook",
+      netWorth: "$2 Billion",
+      company: "Apple",
+      bio: "CEO of Apple Inc.",
+    },
+    {
+      name: "Sundar Pichai",
+      netWorth: "$1.5 Billion",
+      company: "Google",
+      bio: "CEO of Alphabet and Google.",
+    },
+    {
+      name: "Satya Nadella",
+      netWorth: "$1 Billion",
+      company: "Microsoft",
+      bio: "Chairman and CEO of Microsoft.",
+    },
+    {
+      name: "Reed Hastings",
+      netWorth: "$3.5 Billion",
+      company: "Netflix",
+      bio: "Co-founder and executive chairman of Netflix.",
+    },
+    {
+      name: "Susan Wojcicki",
+      netWorth: "$800 Million",
+      company: "YouTube",
+      bio: "Former CEO of YouTube.",
+    },
+    {
+      name: "Sheryl Sandberg",
+      netWorth: "$1.8 Billion",
+      company: "Meta",
+      bio: "Former COO of Meta (Facebook).",
+    },
+    {
+      name: "Howard Schultz",
+      netWorth: "$4 Billion",
+      company: "Starbucks",
+      bio: "Former CEO of Starbucks.",
+    },
+    {
+      name: "Indra Nooyi",
+      netWorth: "$300 Million",
+      company: "PepsiCo",
+      bio: "Former CEO of PepsiCo.",
+    },
+    {
+      name: "Ratan Tata",
+      netWorth: "$1 Billion (est)",
+      company: "Tata Group",
+      bio: "Chairman emeritus of Tata Sons.",
+    },
+    {
+      name: "Narayana Murthy",
+      netWorth: "$4 Billion",
+      company: "Infosys",
+      bio: "Co-founder of Infosys.",
+    },
+    {
+      name: "Azim Premji",
+      netWorth: "$10 Billion",
+      company: "Wipro",
+      bio: "Former chairman of Wipro and philanthropist.",
+    },
+    {
+      name: "Kiran Mazumdar-Shaw",
+      netWorth: "$3 Billion",
+      company: "Biocon",
+      bio: "Indian billionaire entrepreneur and founder of Biocon.",
+    },
+    {
+      name: "Brian Chesky",
+      netWorth: "$9 Billion",
+      company: "Airbnb",
+      bio: "Co-founder and CEO of Airbnb.",
+    },
+    {
+      name: "Drew Houston",
+      netWorth: "$2 Billion",
+      company: "Dropbox",
+      bio: "Co-founder and CEO of Dropbox.",
+    },
+    {
+      name: "Evan Spiegel",
+      netWorth: "$3 Billion",
+      company: "Snap Inc.",
+      bio: "Co-founder and CEO of Snap Inc.",
+    },
+    {
+      name: "Travis Kalanick",
+      netWorth: "$2.7 Billion",
+      company: "Uber",
+      bio: "Co-founder of Uber.",
+    },
+    {
+      name: "Daniel Ek",
+      netWorth: "$4 Billion",
+      company: "Spotify",
+      bio: "Co-founder and CEO of Spotify.",
+    },
+    {
+      name: "Zhou Qunfei",
+      netWorth: "$6 Billion",
+      company: "Lens Technology",
+      bio: "Chinese entrepreneur and CEO of Lens Technology.",
+    },
+    {
+      name: "Cher Wang",
+      netWorth: "$1.1 Billion",
+      company: "HTC",
+      bio: "Co-founder and chairperson of HTC.",
+    },
+    {
+      name: "Tony Robbins",
+      netWorth: "$500 Million",
+      company: "Robbins Research",
+      bio: "Entrepreneur, author, and motivational speaker.",
+    },
+    {
+      name: "Phil Knight",
+      netWorth: "$40 Billion",
+      company: "Nike",
+      bio: "Co-founder and former chairman of Nike.",
+    },
+    {
+      name: "Amancio Ortega",
+      netWorth: "$70 Billion",
+      company: "Zara",
+      bio: "Founder of Inditex, owner of Zara.",
+    },
+    {
+      name: "Francoise Bettencourt Meyers",
+      netWorth: "$90 Billion",
+      company: "L'Oréal",
+      bio: "Heiress to L'Oréal fortune and richest woman in the world.",
+    },
+    {
+      name: "Carl Icahn",
+      netWorth: "$18 Billion",
+      company: "Icahn Enterprises",
+      bio: "Investor and founder of Icahn Enterprises.",
+    },
+    {
+      name: "George Soros",
+      netWorth: "$8.5 Billion",
+      company: "Soros Fund",
+      bio: "Investor and philanthropist.",
+    },
+    {
+      name: "David Beckham",
+      netWorth: "$450 Million",
+      company: "Beckham Brand Holdings",
+      bio: "Former professional footballer and entrepreneur.",
+    },
+    {
+      name: "LeBron James",
+      netWorth: "$1 Billion",
+      company: "SpringHill Company",
+      bio: "NBA star and businessman.",
+    },
+    {
+      name: "Kanye West",
+      netWorth: "$400 Million",
+      company: "Yeezy",
+      bio: "Rapper, producer, and fashion mogul.",
+    },
+    {
+      name: "Taylor Swift",
+      netWorth: "$1.1 Billion",
+      company: "Taylor Swift Productions",
+      bio: "Singer-songwriter and businesswoman.",
+    },
+    {
+      name: "Rihanna",
+      netWorth: "$1.4 Billion",
+      company: "Fenty Beauty",
+      bio: "Singer and entrepreneur.",
+    },
+    {
+      name: "Kylie Jenner",
+      netWorth: "$700 Million",
+      company: "Kylie Cosmetics",
+      bio: "Media personality and cosmetics entrepreneur.",
+    },
+    {
+      name: "Jay-Z",
+      netWorth: "$2.5 Billion",
+      company: "Roc Nation",
+      bio: "Rapper and businessman.",
+    },
+    {
+      name: "Beyoncé",
+      netWorth: "$540 Million",
+      company: "Parkwood Entertainment",
+      bio: "Singer and businesswoman.",
+    }
+  ];
+
 
     const searchInput = document.getElementById("searchInput");
     const resultsDiv = document.getElementById("results");
